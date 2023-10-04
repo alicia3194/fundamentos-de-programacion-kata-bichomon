@@ -6,8 +6,10 @@ toReplace.textContent = "Generasión 1 Pokimon";
 
 // Cambia el color de fondo de la primera generación de Pokimon.
 
-const color = document.querySelector(".infocard-list-pkmn-lg");
-color.style.backgroundColor = "#F7ACCF";
+const color = document.querySelectorAll(".infocard");
+for (let i = 0; i < color.length; i++) {
+  color[i].style.backgroundColor = "#F7ACCF";
+}
 
 // Imprime por consola la URL de la página.
 
@@ -34,5 +36,9 @@ for (let i = 0; i < imagenes.length; i++) {
 
 // Cambia el fondo de todos los infocard-lg-data text-muted para todos los Pokimon voladores itype flying
 
-// const fondo = document.querySelector(".infocard-lg-data text-muted");
-// fondo.style.backgroundColor = "#392759";
+let pokemon = document.querySelectorAll(
+  ".infocard-lg-data.text-muted > small > .itype.flying"
+);
+for (let i = 0; i < pokemon.length; i++) {
+  pokemon[i].parentElement.parentElement.style.backgroundColor = "blue";
+}
